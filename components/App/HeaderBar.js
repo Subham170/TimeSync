@@ -142,9 +142,9 @@ export const HeaderBar = () => {
   }
 
   return (
-    <div className="flex w-full p-2 border-b">
+    <div className="flex flex-row-reverse w-full p-2 bg-gray-400 border-b">
       {/* Left Section */}
-      <div className="flex items-center justify-start pl-2 mr-12 text-2xl">
+      <div className="flex flex-row-reverse items-center justify-start pl-2 mr-12 text-2xl">
         <div className="p-1 ml-1 mr-2">
           <IconButton
             size="medium"
@@ -159,14 +159,14 @@ export const HeaderBar = () => {
         <div
           className="flex items-center justify-center"
         >
-          <Image src="/google-calender.png" height="32px" width="32px" alt="mail-icon"/>
-          <p className="ml-4 font-normal text-gray-500">Kalendar</p>
+          <Image src="/calLogo.png" height="32px" width="32px" alt="mail-icon"/>
+          <p className="ml-4 font-normal text-gray-500">TimeSync</p>
         </div>
       </div>
 
       {/* Middle Section */}
-      <div className="flex items-center flex-auto">
-        <div className="flex items-center justify-start">
+      <div className="flex  flex-row-reverse items-center flex-auto">
+        <div className="flex items-center flex-row-reverse justify-start">
           <div
             className="px-3 py-2 text-sm font-normal text-gray-700 transition border rounded-sm cursor-pointer hover:bg-gray-100"
             onClick={() => dispatch(setTargetDate(Date()))}
@@ -200,8 +200,8 @@ export const HeaderBar = () => {
       </div>
 
       {/* Right Section */}
-      <div className="relative flex items-center justify-end pl-6 pr-2">
-        <div className="flex items-center justify-center mr-8 space-x-3">
+      <div className="relative flex flex-row-reverse items-center justify-end pl-6 pr-2">
+        <div className="flex items-center flex-row-reverse justify-center mr-8 space-x-3">
           <IconButton
             size="medium"
             label="Apps"
@@ -235,7 +235,7 @@ export const HeaderBar = () => {
             }
           </div>
         </div>
-        <div className="flex space-x-2">
+        <div className="flex  flex-row-reverse space-x-2">
           <IconButton
             size="medium"
             label="Apps"

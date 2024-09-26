@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCreateEventBasis, setIsCreateEventModalOpen } from '../../../reducers/calendar/calendarSettingSlice';
 import PanelLeftCalendar from './PanelLeftCalendar';
-
+import AddIcon from '@mui/icons-material/Add';
 const PanelLeft = () => {
   const dispatch = useDispatch()
   
@@ -26,16 +26,11 @@ const PanelLeft = () => {
     <div className="min-w-248">
       <div className="pl-2 my-4">
         <button
-          className="flex items-center justify-center h-12 p-3.5 text-sm transition bg-white border rounded-full shadow-md border-opacity-30 min-w-56 hover:shadow-xl hover:bg-blue-50"
+          className="flex items-center justify-center h-12 p-3.5 text-sm transition bg-gray-100 border rounded-full shadow-md border-opacity-30 min-w-56 hover:shadow-xl hover:bg-blue-50"
           onClick={() => onClickCreate()}
         >
-          <Image
-            src="/createIcon.png"
-            height="32px"
-            width="32px"
-            alt="create-icon"
-          />
-          <span className="pr-3 ml-3 font-normal tracking-wide text-gray-500">Create</span>
+           <AddIcon />
+          <span className="pr-3 ml-1 font-normal tracking-wide text-gray-500">Create</span>
         </button>
       </div>
       <PanelLeftCalendar />

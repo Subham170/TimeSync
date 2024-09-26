@@ -5,7 +5,7 @@ const PanelRight = () => {
   const panelRightItems = [
     {
       label: 'Calendar',
-      src: '/google-calender.png'
+      src: '/calLogo.png'
     },
     {
       label: 'Keeps',
@@ -13,26 +13,29 @@ const PanelRight = () => {
     },
     {
       label: 'Tasks',
-      src: '/google-tasks.png'
+      src: '/tasksLogo.png'
     },
     {
       label: 'Contact',
-      src: '/google-contacts.png'
+      src: '/contlogo.png'
     }
   ]
 
   return (
-    <div className="flex flex-col items-center py-2 space-y-4 border-l min-w-56">
+    <div className="flex flex-col items-center py-2 space-y-4 border-l min-w-56 bg-gray-400 mr-4 ">
       {
         panelRightItems.map(({label, src}, i) => {
           return (
             <div key={i}>
               <IconButton
+                ink="white"
                 size="medium"
                 label={label}
                 tooltipLocation="left"
                 imgComponent={
-                  <Image src={src} width="20px" height="20px" alt="panel-icon" className="z-10" />
+                  <Image src={src} width="20px" height="20px" 
+                  style={{objectFit: 'contain',border: '1px solid black'}}
+                  alt="panel-icon" className="z-10" />
                 }
                 onClickHandler={() => {}}
               />

@@ -25,11 +25,13 @@ const AppLayout = ({ children }) => {
     <div className="relative flex flex-col w-screen max-h-screen min-h-screen">
       <HeaderBar />
       <div className="flex flex-1">
-        <PanelLeft />
+      <PanelRight />
+        
         <div className="relative flex-auto">
           {children}
         </div>
-        <PanelRight />
+        <PanelLeft />
+       
       </div>
       {
         isCreateEventModalOpen &&

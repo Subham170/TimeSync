@@ -11,7 +11,7 @@ import { EventRepeatTypes, ThemeColorTypes } from '../../utils/types'
 import IconButton from '../Common/Button/IconButton'
 import Calendar from '../Common/Calendar/Calendar'
 import Dropdown from '../Common/Dropdown/Dropdown'
-
+import TextField from '@mui/material/TextField';
 const CreateEventModal = () => {
   const createEventModalRef = useRef(null)
   const startDateInputRef = useRef(null)
@@ -317,13 +317,17 @@ const CreateEventModal = () => {
 
         {/* Title Input */}
         <div className="flex py-4 pl-16 pr-5">
-          <input
+        <TextField id="standard-basic" label="Title" variant="standard" value={title}
+          onChange={e => setTitle(e.target.value)}
+          className="w-full text-2xl antialiased font-normal border-b outline-none"
+          placeholder='Add title' />
+          {/* <input
             type="text"
             value={title}
             placeholder="Add title"
             onChange={e => setTitle(e.target.value)}
             className="w-full text-2xl antialiased font-normal border-b outline-none"
-          />
+          /> */}
         </div>
 
         {/* Event Types */}
@@ -511,12 +515,12 @@ const CreateEventModal = () => {
             <MdLocationOn size="20px" color="rgba(75, 85, 99)"/>
           </div>
           <div className="flex-auto pl-6">
-            <input
-              type="text"
-              value={location}
-              placeholder="Location"
-              onChange={e => setLocation(e.target.value)}
-              className="w-full px-2 py-1 text-sm bg-gray-100 border-b outline-none"
+          <TextField 
+            label="Location"  
+            value={location}
+            onChange={e => setLocation(e.target.value)}
+            className="w-full px-2 py-1 text-sm bg-gray-100 border-b outline-none"
+            placeholder='Location'
             />
           </div> 
         </div>
@@ -527,13 +531,21 @@ const CreateEventModal = () => {
             <MdSubject size="20px" color="rgba(75, 85, 99)"/>
           </div>
           <div className="flex-auto pl-6">
-            <textarea
+            <TextField
+            type='text'
+              label="Description"
+              value={description}
+              onChange={e => setDescription(e.target.value)}
+              className="w-full px-2 py-1 text-sm bg-gray-100 border-b outline-none"
+              placeholder='Description'
+            />
+            {/* <textarea
               type="text"
               value={description}
               placeholder="Description"
               onChange={e => setDescription(e.target.value)}
               className="w-full px-2 py-1 text-sm bg-gray-100 border-b outline-none resize-none"
-            />
+            /> */}
           </div>
         </div>
 
